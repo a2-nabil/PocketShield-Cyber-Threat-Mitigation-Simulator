@@ -1,12 +1,13 @@
 # PocketShield
 
-**PocketShield** is a portable **Cyber Threat Mitigation Simulator** written in Java. It runs entirely on your machine with an interactive terminal UI, in-memory game state, and file-based attack logs—designed for classroom demos, portfolio use, and discussions about **object-oriented design** and **ethical responsibility** when building secure systems.
+**PocketShield** is a portable **Cyber Threat Mitigation Simulator** written in Java. **This repository is Phase 1:** it runs entirely on your machine with an interactive terminal UI, in-memory game state, and file-based attack logs—designed for demos, portfolio use, and discussions about **object-oriented design** and **ethical responsibility** when building secure systems.
 
 ---
 
 ## Table of contents
 
 - [Overview](#overview)
+- [Project phases (Phase 1 & beyond)](#project-phases-phase-1--beyond)
 - [Features](#features)
 - [Architecture & separation of concerns](#architecture--separation-of-concerns)
 - [The four pillars of OOP (in this project)](#the-four-pillars-of-oop-in-this-project)
@@ -26,6 +27,27 @@
 PocketShield models a protected **system** (`SystemCore`) that can be targeted by different **cyber threats** (`DDoSAttack`, `PhishingAttack`, `SQLInjection`). A **firewall** (`SecurityFirewall`) processes threats polymorphically and writes a persistent audit trail through a **repository abstraction** (`LogRepository` → `LocalFileLogger`).
 
 The **console layer** (`Main`) only handles input/output. **Business logic** lives in `model`, `threats`, `security`, and `repository`, so the same core code can later be wrapped by a REST API (for example Spring Boot) without rewriting the domain model.
+
+---
+
+## Project phases (Phase 1 & beyond)
+
+### Phase 1 (this project)
+
+- **CLI simulator** on a single machine: terminal menu, in-memory `SystemCore`, file logging via `LogRepository`.
+- **Goal:** Prove the **domain model**, **four OOP pillars**, and **separation of concerns** in a form you can present and extend without a database or cloud stack.
+
+### Phase 2 (planned evolution)
+
+Phase 2 is **not** a throwaway rewrite. The intent is to **keep this same architecture and OOP boundaries**—layered packages, encapsulated core, abstract threat types, polymorphic defense, and pluggable repositories—and **scale them toward real-time cyber operations on realistic scenarios at large scale**, if and when you choose to go there.
+
+Concretely, that can mean:
+
+- **Real-time inputs** (streams, SIEM-style feeds, or APIs) instead of menu-driven simulations, while the **threat / defense model** stays conceptually aligned with today’s classes.
+- **Durable and distributed storage** (databases, message queues, observability pipelines) by **swapping or extending** `LogRepository` and adding infrastructure layers—without entangling that code with `SystemCore` or `CyberThreat` internals.
+- **Larger deployments** (services, clustering, cloud) where the **same separation of concerns** makes testing, compliance, and safe iteration easier.
+
+Phase 1 deliberately looks like a **teaching simulator**; Phase 2 would reuse its **design discipline** for systems that are closer to production—subject to real security engineering, threat modeling, and organizational requirements.
 
 ---
 
@@ -94,7 +116,7 @@ The **console layer** (`Main`) only handles input/output. **Business logic** liv
 ## Requirements
 
 - **Java Development Kit (JDK)** **17 or newer** (the project was verified with **JDK 21**).
-- A terminal that supports **ANSI colors** (Windows Terminal, modern VS Code / Cursor integrated terminal, PowerShell 7, or most Linux/macOS terminals). If colors appear as escape codes, enable UTF-8 / use Windows Terminal.
+- A terminal that supports **ANSI colors** (Windows Terminal, modern VS Code terminal, PowerShell 7, or most Linux/macOS terminals). If colors appear as escape codes, enable UTF-8 / use Windows Terminal.
 
 Verify Java:
 
@@ -199,6 +221,8 @@ mkdir -p out && javac -d out src/com/simulator/repository/*.java src/com/simulat
 
 ## Roadmap: from CLI to cloud
 
+This roadmap is the **bridge from Phase 1 to Phase 2**: same OOP layout, new delivery and scale.
+
 Because the **Scanner** and `println` logic are isolated in `Main`, you can:
 
 1. Keep `SystemCore`, `CyberThreat` hierarchy, and `SecurityFirewall` unchanged.
@@ -218,4 +242,4 @@ This project is provided as educational sample code. Add a license file (for exa
 
 ## Acknowledgments
 
-Built as a teaching-oriented demonstration of **encapsulation, abstraction, inheritance, and polymorphism**, with a layout that mirrors professional **layered** architectures suitable for future API integration.
+Built as **Phase 1** of PocketShield: a teaching-oriented demonstration of **encapsulation, abstraction, inheritance, and polymorphism**, with a layout that mirrors professional **layered** architectures—intentionally reusable if you later pursue **Phase 2** (real-time, large-scale, scenario-driven implementations) on top of the same design principles.
