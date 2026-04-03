@@ -25,7 +25,7 @@ public class Main {
 
         printBootSequence();
 
-        SystemCore system = new SystemCore("MAINFRAME-ALPHA");
+        SystemCore system = new SystemCore("Metropalitan University");
         LogRepository logger = new LocalFileLogger();
         SecurityFirewall firewall = new SecurityFirewall("AEGIS-V2", logger);
 
@@ -118,7 +118,7 @@ public class Main {
     private static void printDashboard(SystemCore system, SecurityFirewall firewall) {
         System.out.println();
         System.out.println("    " + BOLD + "┌──────────────────────────────────────────────────┐" + RESET);
-        System.out.println("    " + BOLD + "│          COMMAND CENTER — MAIN DASHBOARD          │" + RESET);
+        System.out.println("    " + BOLD + "│          COMMAND CENTER — POCKETSHIELD DASHBOARD          │" + RESET);
         System.out.println("    " + BOLD + "├──────────────────────────────────────────────────┤" + RESET);
         System.out.println("    " + BOLD + "│                                                  │" + RESET);
         System.out.println("    " + BOLD + "│" + RESET + "   [1]  View System Health                       " + BOLD + "│" + RESET);
@@ -240,10 +240,10 @@ public class Main {
         System.out.println(RED + BOLD);
         System.out.println("    ╔════════════════════════════════════════════════════════════════════╗");
         System.out.println("    ║                                                                    ║");
-        System.out.println("    ║                    SYSTEM SHUTDOWN COMPLETE                         ║");
+        System.out.println("    ║                    SYSTEM SHUTDOWN COMPLETE                        ║");
         System.out.println("    ║                                                                    ║");
-        System.out.println("    ║           \"Security is not a product, but a process.\"              ║");
-        System.out.println("    ║                                     — Bruce Schneier               ║");
+        System.out.println("    ║                  \"Stay ready. Stay secure.\"                      ║");
+        System.out.println("    ║         PocketShield - (Built by Nabil, Gilman & Ricky)            ║");
         System.out.println("    ║                                                                    ║");
         System.out.println("    ╚════════════════════════════════════════════════════════════════════╝");
         System.out.println(RESET);
