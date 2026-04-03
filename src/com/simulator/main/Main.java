@@ -117,29 +117,29 @@ public class Main {
 
     private static void printDashboard(SystemCore system, SecurityFirewall firewall) {
         System.out.println();
-        System.out.println("    " + BOLD + "┌──────────────────────────────────────────────────┐" + RESET);
-        System.out.println("    " + BOLD + "│          COMMAND CENTER — POCKETSHIELD DASHBOARD          │" + RESET);
-        System.out.println("    " + BOLD + "├──────────────────────────────────────────────────┤" + RESET);
-        System.out.println("    " + BOLD + "│                                                  │" + RESET);
-        System.out.println("    " + BOLD + "│" + RESET + "   [1]  View System Health                       " + BOLD + "│" + RESET);
-        System.out.println("    " + BOLD + "│" + RESET + "   [2]  Simulate DDoS Attack                     " + BOLD + "│" + RESET);
-        System.out.println("    " + BOLD + "│" + RESET + "   [3]  Simulate Phishing Campaign               " + BOLD + "│" + RESET);
-        System.out.println("    " + BOLD + "│" + RESET + "   [4]  Simulate SQL Injection                   " + BOLD + "│" + RESET);
-        System.out.println("    " + BOLD + "│" + RESET + "   [5]  Simulate Random Multi-Vector Attack      " + BOLD + "│" + RESET);
-        System.out.println("    " + BOLD + "│" + RESET + "   [6]  Repair / Patch System                    " + BOLD + "│" + RESET);
-        System.out.println("    " + BOLD + "│" + RESET + "   [7]  View Attack Logs                         " + BOLD + "│" + RESET);
-        System.out.println("    " + BOLD + "│" + RESET + "   [8]  Shutdown & Exit                          " + BOLD + "│" + RESET);
-        System.out.println("    " + BOLD + "│                                                  │" + RESET);
-        System.out.println("    " + BOLD + "├──────────────────────────────────────────────────┤" + RESET);
+        System.out.println("    " + BOLD + "┌───────────────────────────────────────────────────────────┐" + RESET);
+        System.out.println("    " + BOLD + "│                   POCKETSHIELD DASHBOARD                  │" + RESET);
+        System.out.println("    " + BOLD + "├───────────────────────────────────────────────────────────┤" + RESET);
+        System.out.println("    " + BOLD + "│                                                           │" + RESET);
+        System.out.println("    " + BOLD + "│" + RESET + "   [1]  View System Health                                 " + BOLD + "│" + RESET);
+        System.out.println("    " + BOLD + "│" + RESET + "   [2]  Simulate DDoS Attack                               " + BOLD + "│" + RESET);
+        System.out.println("    " + BOLD + "│" + RESET + "   [3]  Simulate Phishing Campaign                         " + BOLD + "│" + RESET);
+        System.out.println("    " + BOLD + "│" + RESET + "   [4]  Simulate SQL Injection                             " + BOLD + "│" + RESET);
+        System.out.println("    " + BOLD + "│" + RESET + "   [5]  Simulate Random Multi-Vector Attack                " + BOLD + "│" + RESET);
+        System.out.println("    " + BOLD + "│" + RESET + "   [6]  Repair / Patch System                              " + BOLD + "│" + RESET);
+        System.out.println("    " + BOLD + "│" + RESET + "   [7]  View Attack Logs                                   " + BOLD + "│" + RESET);
+        System.out.println("    " + BOLD + "│" + RESET + "   [8]  Shutdown & Exit                                    " + BOLD + "│" + RESET);
+        System.out.println("    " + BOLD + "│                                                           │" + RESET);
+        System.out.println("    " + BOLD + "├───────────────────────────────────────────────────────────┤" + RESET);
 
         String statusColor = getStatusColor(system.getSystemStatus());
         System.out.println("    " + BOLD + "│" + RESET + "  System : " + statusColor + system.getSystemStatus() + RESET
                 + "  Health: " + system.getHealthBar()
                 + "  " + BOLD + "│" + RESET);
         System.out.println("    " + BOLD + "│" + RESET + "  Threats Blocked: " + firewall.getThreatsBlocked()
-                + "                              " + BOLD + "│" + RESET);
+                + "                                       " + BOLD + "│" + RESET);
 
-        System.out.println("    " + BOLD + "└──────────────────────────────────────────────────┘" + RESET);
+        System.out.println("    " + BOLD + "└───────────────────────────────────────────────────────────┘" + RESET);
     }
 
     private static void displaySystemHealth(SystemCore system) {
@@ -242,7 +242,7 @@ public class Main {
         System.out.println("    ║                                                                    ║");
         System.out.println("    ║                    SYSTEM SHUTDOWN COMPLETE                        ║");
         System.out.println("    ║                                                                    ║");
-        System.out.println("    ║                  \"Stay ready. Stay secure.\"                      ║");
+        System.out.println("    ║                  \"Stay ready. Stay secure.\"                        ║");
         System.out.println("    ║         PocketShield - (Built by Nabil, Gilman & Ricky)            ║");
         System.out.println("    ║                                                                    ║");
         System.out.println("    ╚════════════════════════════════════════════════════════════════════╝");
